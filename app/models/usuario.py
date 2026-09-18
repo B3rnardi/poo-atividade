@@ -4,7 +4,7 @@ class Usuario:
     def __init__(self, id, nome, senha):
         self._id = id
         self._nome = nome
-        self.__senha = senha  # Encapsulamento: atributo estritamente privado
+        self.__senha = senha 
 
     def mostrar_id(self):
         return self._id
@@ -12,11 +12,9 @@ class Usuario:
     def mostrar_nome(self):
         return self._nome
 
-    # Método público para validar a palavra-passe de forma segura sem a expor
     def verificar_senha(self, senha_tentativa):
         return self.__senha == senha_tentativa
 
-    # Método base que será sobrescrito (Polimorfismo)
     def listar_permissoes(self):
         return []
 
@@ -36,7 +34,6 @@ class Moderador(Usuario):
         return ["visualizar_ofertas", "criar_ofertas", "editar_ofertas", "excluir_ofertas", "gerir_utilizadores"]
 
 
-# Dica do professor: mapeamento de string para a Classe real
 PERFIS = {
     'visitante': Visitante,
     'contribuidor': Contribuidor,
