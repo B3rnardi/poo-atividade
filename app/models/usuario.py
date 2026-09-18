@@ -46,10 +46,8 @@ PERFIS = {
 def carregar_usuarios():
     usuarios_instanciados = []
     for u in USUARIOS:
-        # 1. Identifica a classe correta através do texto do mock
         classe_do_usuario = PERFIS[u['perfil']]
         
-        # 2. Instancia o objeto da classe filha correspondente
         usuario_obj = classe_do_usuario(u['id'], u['nome'], u['senha'])
         
         usuarios_instanciados.append(usuario_obj)
